@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React from "react";
+import { useAuth } from "./providers/auth";
 
 function App() {
+
+  const {user, setUser} = useAuth()
+
+  console.log("user", user)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div className="App" >
+     <h1>Oi</h1>
+     <input  onChange={
+       (e)=> setUser({name: e.target.value})
+     }/>
     </div>
+    </>
   );
 }
 
